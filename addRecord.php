@@ -15,6 +15,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+// prepare and bind
+$stmt = $conn->prepare("INSERT INTO bieren (brouwerij, naam, land, type, alcoholpercentage, score, opmerkingen) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssdds", $brouwerij, $naam, $land, $type, $alcoholpercentage, $score, $opmerkingen);
+
 $brouwerij = $_POST['brouwerij'];
 $naam = $_POST['naam'];
 $land =  $_POST['land'];
@@ -23,14 +27,9 @@ $alcoholpercentage = $_POST['alcoholpercentage'];
 $score = $_POST['score'];
 $opmerkingen = $_POST['opmerkingen'];
 
-$sql = "INSERT INTO bieren (brouwerij, naam, land, type, alcoholpercentage, score, opmerkingen) VALUES ('$brouwerij', '$naam', '$land', '$type', $alcoholpercentage, $score, '$opmerkingen')";
+$stmt->execute();
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully ";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
+$stmt->close();
 $conn->close();
 
 
