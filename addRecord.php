@@ -20,7 +20,7 @@ $stmt->bind_param("ssssdds", $brouwerij, $naam, $land, $type, $alcoholpercentage
 
 $brouwerij = $_POST['brouwerij'];
 $naam = $_POST['naam'];
-$land =  strtoupper( $_POST['land'] );
+$land =  strtoupper($_POST['land']);
 $type = $_POST['type'];
 $alcoholpercentage = $_POST['alcoholpercentage'];
 $score = $_POST['score'];
