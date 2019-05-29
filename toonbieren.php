@@ -1,3 +1,4 @@
+
 <?php
 
 $servername = "localhost";
@@ -18,10 +19,17 @@ $sql = "SELECT * FROM bieren";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo $row['brouwerij'] . " - " . $row['naam'] . " - " . $row['land'] . " - " . $row['type'] . " - " . $row['alcoholpercentage'] . "% - " . $row['score'] . "<br>";
+
+    echo "<table>"; // start a table tag in the HTML
+
+    echo "<th>Brouwerij</th><th>Naam</th><th>LvH</th><th>Type</th><th>Alc%</th><th>Score</th>";
+
+    while ($row = $result->fetch_assoc()){   //Creates a loop to loop through results
+        echo "<tr><td>" . $row['brouwerij'] . "</td><td>" . $row['naam'] . "</td><td>" . $row['land'] . "</td><td>" . $row['type'] . "</td><td>" . $row['alcoholpercentage'] . "</td><td>" . $row['score'] . "</td></tr>";
     }
+
+    echo "</table>"; //Close the table in HTML
+
 } else {
     echo "0 results";
 }
