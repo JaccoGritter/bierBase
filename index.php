@@ -1,3 +1,5 @@
+<?php require('toonbieren.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +13,13 @@
 <body>
     <h2>Maak een keuze:</h2>
     <a href="biertoevoegen.php">Voeg een bier toe</a><br>
-    <a href="toonbieren.php">Laat de bieren zien</a>
+    <p>Laat de bieren zien</p>
+
+    <?php $bierArray = getBieren();
+    echo buildTable($bierArray);
+    ?>
+
+
 </body>
 
 </html>
