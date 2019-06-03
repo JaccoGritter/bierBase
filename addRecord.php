@@ -1,6 +1,6 @@
 <?php
 
-require ('connect.php');
+require('connect.php');
 
 // prepare and bind
 $stmt = $conn->prepare("INSERT INTO bieren (brouwerij, naam, land, type, alcoholpercentage, score, opmerkingen) VALUES (?, ?, ?, ?, ?, ?, ?)");

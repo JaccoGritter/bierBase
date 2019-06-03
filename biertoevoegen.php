@@ -10,7 +10,7 @@
 
 <body>
     <form action="addRecord.php" method="POST">
-        Bouwerij:<br>
+        Brouwerij:<br>
         <input type="text" name="brouwerij" required><br>
         Naam van het bier<br>
         <input type="text" name="naam" required><br>

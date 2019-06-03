@@ -8,6 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>bierBase</title>
+
+    <style>
+        th {
+            text-align: left;
+        }
+    </style>
+
 </head>
 
 <body>
