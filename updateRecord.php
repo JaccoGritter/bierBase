@@ -12,13 +12,13 @@ $score = $_POST['score'];
 $opmerkingen = $_POST['opmerkingen'];
 
 // prepare and bind
-$stmt = $conn->prepare("UPDATE bieren SET brouwerij = ?, naam = ?, land = ?, type = ?, alcoholpercentage = ?, score= ?, opmerkingen = ? WHERE id = ? ");
+$stmt = $mysqli->prepare("UPDATE bieren SET brouwerij = ?, naam = ?, land = ?, type = ?, alcoholpercentage = ?, score= ?, opmerkingen = ? WHERE id = ? ");
 $stmt->bind_param("ssssdisi", $brouwerij, $naam, $land, $type, $alcoholpercentage, $score, $opmerkingen, $id);
 
 $stmt->execute();
 $stmt->close();
 
-$conn->close();
+$mysqli->close();
 
 ?>
 <b>Record is gewijzigd!</b>

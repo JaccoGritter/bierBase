@@ -17,7 +17,7 @@ $opmerkingen = $_POST['opmerkingen'];
 $stmt->execute();
 
 $stmt->close();
-$conn->close();
+$mysqli->close();
 
 
 ?>

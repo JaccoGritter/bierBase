@@ -11,21 +11,21 @@
 
 <body>
     <form action="updateRecord.php" method="POST">
-        ID: <input type="number" name = "id" readonly size = "4" value = <?php echo $_GET["q"]?> > <br><br>
+        ID: <input type="number" name = "id" readonly size = "4" value = <?php echo $_GET["id"]?> > <br><br>
         Brouwerij:<br>
-        <input type="text" name="brouwerij" required value = "<?php echo getBier($_GET["q"])["brouwerij"] ?>"> <br>
+        <input type="text" name="brouwerij" required value = "<?php echo getBier($_GET["id"])["brouwerij"] ?>"> <br>
         Naam van het bier<br>
-        <input type="text" name="naam" required value = "<?php echo getBier($_GET["q"])["naam"] ?>" ><br>
+        <input type="text" name="naam" required value = "<?php echo getBier($_GET["id"])["naam"] ?>" ><br>
         Land van herkomst<br>
-        <input type="text" name="land" maxlength="2" size="2" value = "<?php echo getBier($_GET["q"])["land"] ?>" required"><br>
+        <input type="text" name="land" maxlength="2" size="2" value = "<?php echo getBier($_GET["id"])["land"] ?>" required"><br>
         Type van het bier<br>
-        <input type="text" name="type" value = "<?php echo getBier($_GET["q"])["type"] ?>" ><br>
+        <input type="text" name="type" value = "<?php echo getBier($_GET["id"])["type"] ?>" ><br>
         Alcoholpercentage<br>
-        <input type="number" name="alcoholpercentage" value="6.0" min="0" max="15" step="0.1" value = "<?php echo getBier($_GET["q"])["alcoholpercentage"] ?>" required><br>
+        <input type="number" name="alcoholpercentage" value="6.0" min="0" max="15" step="0.1" value = "<?php echo getBier($_GET["id"])["alcoholpercentage"] ?>" required><br>
         Score (0-10)<br>
-        <input type="number" name="score" value="6.0" min="1" max="10" step="0.5" value = "<?php echo getBier($_GET["q"])["score"] ?>" required><br>
+        <input type="number" name="score" value="6.0" min="1" max="10" step="0.5" value = "<?php echo getBier($_GET["id"])["score"] ?>" required><br>
         Opmerkingen <br>
-        <textarea name="opmerkingen" style="width:20rem; height:5rem;" > <?php echo getBier($_GET["q"])["opmerkingen"] ?> </textarea><br>
+        <textarea name="opmerkingen" style="width:20rem; height:5rem;" > <?php echo getBier($_GET["id"])["opmerkingen"] ?> </textarea><br>
         <input type="submit" value="wijzig">
     </form>
     <br>

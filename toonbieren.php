@@ -27,7 +27,7 @@ function getBier($bierid)
     require('connect.php');
 
     $sql = "SELECT * FROM bieren WHERE id = " . $bierid;
-    $result = $conn->query($sql);
+    $result = $mysqli->query($sql);
 
     $resultArray = $result->fetch_assoc();    // get result as associative array
 
