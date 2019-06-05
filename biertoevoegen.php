@@ -77,12 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("ssssdds", $brouwerij, $naam, $land, $type, $alcoholpercentage, $score, $opmerkingen);
-            
-            // Set parameters
-            // $param_name = $name;
-            // $param_address = $address;
-            // $param_salary = $salary;
-            
+
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Records created successfully. Redirect to landing page

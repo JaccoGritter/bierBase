@@ -80,11 +80,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("ssssddsi", $brouwerij, $naam, $land, $type, $alcoholpercentage, $score, $opmerkingen, $id);
             
-            // Set parameters
-            // $param_name = $name;
-            // $param_address = $address;
-            // $param_salary = $salary;
-            
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Records created successfully. Redirect to landing page
@@ -154,8 +149,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         exit();
     }
 }
-
-
 
 
 ?>
