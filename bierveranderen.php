@@ -111,10 +111,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $sql = "SELECT * FROM bieren WHERE id = ?";
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("i", $param_id);
+            $stmt->bind_param("i", $id);
             
-            // Set parameters
-            $param_id = $id;
+            // // Set parameters
+            // $param_id = $id;
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
